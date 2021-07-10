@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <!--region Toolbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorAccent"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--region Back Button-->
+            <ImageButton
+                android:id="@+id/ib_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_back_arrow" />
+            <!--endregion-->
+
+            <!--region Playlist Button-->
+            <ImageButton
+                android:id="@+id/ib_playlist"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toEndOf="@+id/ib_back"
+                android:background="@drawable/ic_playlist" />
+            <!--endregion-->
+
+            <!--region Favorite Button-->
+            <ImageButton
+                android:id="@+id/ib_favorite"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/default_5dp"
+                android:layout_toStartOf="@+id/rl_download"
+                android:background="@drawable/ic_favorite" />
+            <!--endregion-->
+
+            <!--region Download Button-->
+            <RelativeLayout
+                android:id="@+id/rl_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/ib_share">
+
+                <ImageButton
+                    android:id="@+id/ib_download"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:layout_margin="@dimen/default_5dp"
+                    android:background="@drawable/ic_download" />
+
+                <ProgressBar
+                    android:id="@+id/pb_download_progress"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
+            <!--endregion-->
+
+            <!--region Share Button-->
+            <ImageButton
+                android:id="@+id/ib_share"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/default_5dp"
+                android:background="@drawable/ic_menu_share" />
+            <!--endregion-->
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <!--endregion-->
+
+    <RelativeLayout
+        android:id="@+id/rl_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/black">
+
+        <!--region Lecture Title-->
+        <TextView
+            android:id="@+id/tv_lecture_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Lecture Title"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+        <!--region Lecture Date-->
+        <TextView
+            android:id="@+id/tv_lecture_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lecture_title"
+            android:padding="5dp"
+            android:text="Lecture Date"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+        <!--region Lecture Place-->
+        <TextView
+            android:id="@+id/tv_lecture_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lecture_date"
+            android:padding="5dp"
+            android:text="Lecture Place"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+        <!--region Lecture Country-->
+        <TextView
+            android:id="@+id/tv_lecture_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lecture_place"
+            android:padding="5dp"
+            android:text="Lecture Country"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+        <RelativeLayout
+            android:id="@+id/rl_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <!--region Video Player View-->
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/mPlayerView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="#A6000000"
+                app:controller_layout_id="@layout/video_controls_exo_v2"
+                app:player_layout_id="@layout/exo_simple_player_view"
+                app:repeat_toggle_modes="one"
+                app:resize_mode="fit"
+                app:show_shuffle_button="true"
+                app:show_timeout="45000"
+                app:surface_type="texture_view" />
+            <!--endregion-->
+        </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/dropdown_play_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_video"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/button_playback_speed_outer_background"
+                android:clipToPadding="false"
+                android:dropDownWidth="86dp"
+                android:outlineProvider="paddedBounds"
+                android:popupBackground="#323232" />
+
+
+        <!--region Lecture Category-->
+        <TextView
+            android:id="@+id/tv_lecture_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_lecture_language"
+            android:padding="5dp"
+            android:text="Lecture Category"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+        <!--region Lecture Language-->
+        <TextView
+            android:id="@+id/tv_lecture_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp"
+            android:text="Lecture language"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+    </RelativeLayout>
+    <!--region Loader-->
+    <include
+        android:id="@+id/include_layout_loader"
+        layout="@layout/layout_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--endregion-->
+
+</RelativeLayout>

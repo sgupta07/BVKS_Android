@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <!--region Toolbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorAccent"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ib_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_back_arrow" />
+
+            <ImageButton
+                android:id="@+id/ib_playlist"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toEndOf="@+id/ib_back"
+                android:background="@drawable/ic_playlist" />
+
+            <ImageButton
+                android:id="@+id/ib_favorite"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/default_5dp"
+                android:layout_toStartOf="@+id/rl_download"
+                android:background="@drawable/ic_favorite" />
+
+            <RelativeLayout
+                android:layout_centerVertical="true"
+                android:id="@+id/rl_download"
+                android:layout_toStartOf="@+id/ib_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/ib_download"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:layout_marginStart="@dimen/default_5dp"
+                    android:layout_marginTop="@dimen/default_5dp"
+                    android:layout_marginBottom="@dimen/default_5dp"
+                    android:background="@drawable/ic_download" />
+                <ProgressBar
+                    android:id="@+id/pb_download_progress"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/ib_share"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/default_5dp"
+                android:background="@drawable/ic_menu_share" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <!--endregion-->
+
+    <RelativeLayout
+        android:id="@+id/rl_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_button_speed"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/black">
+
+        <!--region Lecture Title-->
+        <TextView
+            android:id="@+id/tv_lecture_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Lecture Title"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+        <!--region Lecture Date-->
+        <TextView
+            android:id="@+id/tv_lecture_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lecture_title"
+            android:padding="5dp"
+            android:text="Lecture Date"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+        <!--region Lecture Place-->
+        <TextView
+            android:id="@+id/tv_lecture_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lecture_date"
+            android:padding="5dp"
+            android:text="Lecture Place"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+        <!--region Lecture Country-->
+        <TextView
+            android:id="@+id/tv_lecture_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_lecture_place"
+            android:padding="5dp"
+            android:text="Lecture Country"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <!--endregion-->
+
+            <ImageView
+                android:id="@+id/album_art"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_lecture_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_lecture_language"
+            android:padding="5dp"
+            android:text="Lecture Category"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_lecture_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp"
+            android:text="Lecture language"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_button_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/player_control_view"
+        android:background="#323232"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/dropdown_play_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_playback_speed_outer_background"
+            android:clipToPadding="false"
+            android:dropDownWidth="86dp"
+            android:outlineProvider="paddedBounds"
+            android:popupBackground="#323232" />
+    </RelativeLayout>
+
+    <com.google.android.exoplayer2.ui.PlayerControlView
+        android:id="@+id/player_control_view"
+        app:controller_layout_id="@layout/video_controls_exo"
+        android:layout_width="match_parent"
+        app:show_shuffle_button="true"
+        app:repeat_toggle_modes="one"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

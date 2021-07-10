@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/navImageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="@string/nav_header_desc"
+        android:scaleType="fitStart"
+        android:src="@drawable/maharaj_nav_icon_border_v2" />
+
+    <TextView
+        android:id="@+id/navTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        android:text="@string/nav_header_title"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/navSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navTitle"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignStart="@+id/navTitle"
+        android:layout_alignEnd="@+id/navTitle"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp"
+        android:layout_alignParentEnd="true"
+        android:text="@string/nav_header_subtitle" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/navSubtitle"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/facebook_view"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_facebook_header" />
+
+        <ImageView
+            android:id="@+id/youtube_view"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_youtube_header" />
+
+        <ImageView
+            android:id="@+id/instagram_view"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_instagram_header" />
+    </LinearLayout>
+</RelativeLayout>

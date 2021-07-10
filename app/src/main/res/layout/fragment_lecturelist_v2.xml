@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_8dp">
+
+            <TextView
+                android:id="@+id/tv_switch_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audio"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="Audio" />
+
+            <Switch
+                android:id="@+id/switch_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                android:text="Videos Only"
+                android:textColor="@color/white"
+                android:theme="@style/MySwitch" />
+        </RelativeLayout>
+
+        <include layout="@layout/fragment_lecturelist" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loaderBackground"
+        android:clickable="true"
+        android:visibility="gone"
+        android:elevation="5dp"
+        android:focusable="true"
+        tools:targetApi="lollipop">
+
+        <ProgressBar
+            android:id="@+id/pb_loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/pb_loader"
+            android:text="Loading..."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

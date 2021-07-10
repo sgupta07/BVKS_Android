@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/one_dot_five"
+    android:paddingStart="@dimen/default_8dp"
+    android:paddingEnd="@dimen/default_4dp"
+    android:paddingTop="@dimen/default_8dp"
+    android:paddingBottom="@dimen/default_8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    android:background="#303030"
+    android:gravity="center"
+    android:textColor="#ffffff"
+    android:textSize="18sp" />

@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="20dp">
+
+            <!--region Total Audio File-->
+            <TextView
+                android:id="@+id/tv_total_lecture_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/default_8dp"
+                android:text="@string/total_lecture"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvTotalLecture"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rectangle_border_grey"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingTop="@dimen/default_8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="@dimen/default_8dp"
+                android:textColor="@color/com_facebook_blue"
+                app:layout_constraintStart_toEndOf="@id/tv_total_lecture_label"
+                app:layout_constraintTop_toTopOf="@id/tv_total_lecture_label"
+                tools:text="49" />
+            <!--endregion-->
+
+            <!--region Total Listened-->
+            <TextView
+                android:id="@+id/tv_heard_lecture_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8dp"
+                android:padding="@dimen/default_8dp"
+                android:text="Total Listened:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_lecture_label" />
+
+            <TextView
+                android:id="@+id/tvHeardLecture"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rectangle_border_grey"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingTop="@dimen/default_8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="@dimen/default_8dp"
+                android:text="0"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintStart_toEndOf="@id/tv_total_lecture_label"
+                app:layout_constraintTop_toTopOf="@id/tv_heard_lecture_label" />
+            <!--endregion-->
+
+            <!--region Divider First-->
+            <TextView
+                android:id="@+id/tvLastMonthLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_20dp"
+                android:layout_marginBottom="@dimen/default_20dp"
+                android:text="Last Month"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_heard_lecture_label" />
+
+            <View
+                android:id="@+id/viewSeparator1"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="@dimen/default_8dp"
+                android:background="@color/com_facebook_blue"
+                app:layout_constraintBottom_toBottomOf="@id/tvLastMonthLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvLastMonthLabel"
+                app:layout_constraintTop_toTopOf="@id/tvLastMonthLabel" />
+            <!--endregion-->
+
+            <!--region Last Month Stats-->
+            <LinearLayout
+                android:id="@+id/llLastMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastMonthLabel">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_music" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvLmAudioTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="7h" />
+
+
+                        <ProgressBar
+                            android:id="@+id/pbLastMonthAudio"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center_horizontal"
+                            android:progress="55"
+                            android:progressDrawable="@drawable/progress_drwable" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_play_button" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvLmVideoTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="7h" />
+
+                        <ProgressBar
+                            android:id="@+id/pbLastMonthVideo"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center_horizontal"
+                            android:progress="55"
+                            android:progressDrawable="@drawable/progress_drwable" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="#D47259"
+                        android:id="@+id/tvLmSb"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="SB 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#58CB87"
+                        android:id="@+id/tvLmBg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="BG 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#4D6167"
+                        android:id="@+id/tvLmCC"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="CC 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#603264"
+                        android:id="@+id/tvLmVns"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center"
+                        android:text="VNS 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#794655"
+                        android:id="@+id/tvLmBhajan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="Bhajans 1H" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--endregion-->
+
+            <!--region Divider Second-->
+            <TextView
+                android:id="@+id/tvLastWeekLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_20dp"
+                android:layout_marginBottom="@dimen/default_20dp"
+                android:text="Last Week"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llLastMonth" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginEnd="@dimen/default_8dp"
+                android:background="@color/com_facebook_blue"
+                app:layout_constraintBottom_toBottomOf="@id/tvLastWeekLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/viewSeparator1"
+                app:layout_constraintTop_toTopOf="@id/tvLastWeekLabel" />
+            <!--endregion-->
+
+            <!--region Last Week Stats-->
+            <LinearLayout
+                android:id="@+id/llLastWeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastWeekLabel">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_music" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvLwAudioTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="7h" />
+
+                        <ProgressBar
+                            android:id="@+id/pbLastWeekAudio"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center_horizontal"
+                            android:progress="30"
+                            android:progressDrawable="@drawable/progress_drwable" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_play_button" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvLwVideoTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="7h" />
+
+
+                        <ProgressBar
+                            android:id="@+id/pbLastWeekVideo"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center_horizontal"
+
+                            android:progress="55"
+                            android:progressDrawable="@drawable/progress_drwable" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="#D47259"
+                        android:id="@+id/tvLwSb"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="SB 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#58CB87"
+                        android:id="@+id/tvLwBg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="BG 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#4D6167"
+                        android:id="@+id/tvLwCC"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="CC 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#603264"
+                        android:id="@+id/tvLwVns"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center"
+                        android:text="VNS 1H" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="@dimen/default_8dp"
+                        android:background="@color/colorAccent" />
+
+                    <TextView
+                        android:textColor="#794655"
+                        android:id="@+id/tvLwBhajan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="Bhajans 1H" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--endregion-->
+
+            <!--region Divider Third-->
+            <TextView
+                android:id="@+id/tvThisWeekLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_20dp"
+                android:layout_marginBottom="@dimen/default_20dp"
+                android:text="This Week"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llLastWeek" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginEnd="@dimen/default_8dp"
+                android:background="@color/com_facebook_blue"
+                app:layout_constraintBottom_toBottomOf="@id/tvThisWeekLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/viewSeparator1"
+                app:layout_constraintTop_toTopOf="@id/tvThisWeekLabel" />
+            <!--endregion-->
+
+            <!--region Hours Label-->
+            <LinearLayout
+                android:id="@+id/llHoursLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/thisWeekChart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/thisWeekChart">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="H"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="U"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <!--endregion-->
+
+            <!--region Minutes Label-->
+            <LinearLayout
+                android:id="@+id/llMinutesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/thisWeekChart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/thisWeekChart">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="M"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="U"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="T"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <!--endregion-->
+
+            <!--region This Week Chart-->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/thisWeekChart"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/llHoursLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvThisWeekLabel" />
+            <!--endregion-->
+
+            <!--region Divider Fourth-->
+            <TextView
+                android:id="@+id/tvCustomLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_20dp"
+                android:layout_marginBottom="@dimen/default_20dp"
+                android:text="Custom"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thisWeekChart" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginEnd="@dimen/default_8dp"
+                android:background="@color/com_facebook_blue"
+                app:layout_constraintBottom_toBottomOf="@id/tvCustomLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/viewSeparator1"
+                app:layout_constraintTop_toTopOf="@id/tvCustomLabel" />
+            <!--endregion-->
+
+            <!--region Start Date-->
+            <TextView
+                android:id="@+id/tvStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Date:"
+                app:drawableBottomCompat="@drawable/ic_calendar"
+                app:layout_constraintEnd_toStartOf="@+id/tvEndDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCustomLabel"
+                tools:ignore="MissingPrefix" />
+            <!--endregion-->
+
+            <!--region End Date-->
+            <TextView
+                android:id="@+id/tvEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End Date:"
+                app:drawableBottomCompat="@drawable/ic_calendar"
+                app:layout_constraintEnd_toStartOf="@id/tvAllTime"
+                app:layout_constraintStart_toEndOf="@+id/tvStartDate"
+                app:layout_constraintTop_toTopOf="@id/tvStartDate"
+                tools:ignore="MissingPrefix" />
+            <!--endregion-->
+
+            <!--region All Time-->
+            <TextView
+                android:id="@+id/tvAllTime"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rectangle_border_grey"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingTop="@dimen/default_8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="@dimen/default_8dp"
+                android:text="All\nTime"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintBottom_toBottomOf="@id/tvStartDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvEndDate"
+                app:layout_constraintTop_toTopOf="@id/tvStartDate" />
+            <!--endregion-->
+
+            <!--region Total Audio Time-->
+            <LinearLayout
+                android:id="@+id/llAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/circle_stroke"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="@id/tvStartDate"
+                app:layout_constraintTop_toBottomOf="@+id/tvStartDate">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_music_green" />
+
+                <TextView
+                    android:id="@+id/tvAudioHr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12h" />
+
+            </LinearLayout>
+            <!--endregion-->
+
+            <!--region Total Video Time-->
+            <LinearLayout
+                android:id="@+id/llVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_stroke"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/llAudio"
+                app:layout_constraintTop_toTopOf="@+id/llAudio">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_play_button_red" />
+
+                <TextView
+                    android:id="@+id/tvVideoHr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12h" />
+
+            </LinearLayout>
+            <!--endregion-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

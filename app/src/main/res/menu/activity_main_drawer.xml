@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/nav_lectures"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="@string/menu_lecture_library" />
+
+    <item
+        android:id="@+id/nav_history"
+        android:iconTint="@color/white"
+        app:actionLayout="@layout/menu_history" />
+    <item
+        android:id="@+id/nav_stats"
+        android:iconTint="@color/white"
+        app:actionLayout="@layout/menu_stats"/>
+    <item
+        android:id="@+id/nav_popular_lecture"
+        android:iconTint="@color/white"
+        app:actionLayout="@layout/menu_popular_lectures"/>
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:title="@string/menu_about" />
+
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/ic_menu_share"
+        android:title="@string/menu_share" />
+
+    <item
+        android:id="@+id/nav_donate"
+        android:icon="@drawable/ic_card_giftcard_black_24dp"
+        android:title="@string/donate_text" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings_text" />
+
+    <item
+        android:id="@+id/nav_signout"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="@string/signout_text" />
+    <item
+        android:id="@+id/nav_rate_us"
+        app:actionLayout="@layout/rate_us" />
+
+</menu>

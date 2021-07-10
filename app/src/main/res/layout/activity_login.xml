@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:padding="24dp">
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <LinearLayout
+           android:id="@+id/loginScreenLayout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_alignParentTop="true"
+           android:orientation="vertical">
+
+           <ImageView
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginBottom="24dp"
+               android:src="@drawable/maharaj_nav_icon_v2" />
+
+           <!--  Email Label -->
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:layout_marginBottom="8dp">
+
+               <EditText
+                   android:id="@+id/input_email"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="Email"
+                   android:inputType="textEmailAddress" />
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <!--  Password Label -->
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:layout_marginBottom="8dp">
+
+               <EditText
+                   android:id="@+id/input_password"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="Password"
+                   android:inputType="textPassword" />
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <Button
+               android:id="@+id/btn_login"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/default_8dp"
+               android:layout_marginBottom="@dimen/default_8dp"
+               android:text="@string/sign_in"
+               android:textAllCaps="false"
+               android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+           <TextView
+               android:id="@+id/forgot_password"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="24dp"
+               android:gravity="center"
+               android:text="@string/forgot_password"
+               android:textSize="16dip" />
+
+           <TextView
+               android:id="@+id/link_signup"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="20dp"
+               android:gravity="center"
+               android:text="@string/create_account"
+               android:textSize="16dip" />
+           <TextView
+               android:id="@+id/sign_in_alternative_text"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:text="-Or-"
+               android:textSize="16sp" />
+
+           <ImageButton
+               android:layout_marginTop="20dp"
+               android:id="@+id/googleSignInButton"
+               android:layout_width="210dp"
+               android:layout_gravity="center"
+               android:layout_height="45dp"
+               android:background="@drawable/google_login_v2"
+               android:text="@string/google_signin"
+               android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+           <ImageButton
+               android:layout_marginTop="10dp"
+               android:id="@+id/facebookSignInButton"
+               android:layout_width="210dp"
+               android:layout_height="45dp"
+               android:layout_gravity="center"
+               android:background="@drawable/fb_login_v2"
+               android:text="@string/facebook_signin"
+               android:theme="@style/ThemeOverlay.MyDarkButton" />
+       </LinearLayout>
+   </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">Bhakti Vikāsa Swami</string>
+    <string name="channel_name" translatable="false">Lectures</string>
+    <string name="channel_name_video" translatable="false">Video Lectures</string>
+    <string name="channel_description" translatable="false">Channel desc</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Bhakti Vikasa Swami</string>
+    <string name="nav_header_subtitle">bvks.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_filter">Filter</string>
+    <string name="action_sort">Sort</string>
+    <string name="action_share">Share</string>
+
+    <string name="menu_lecture_library">Media library</string>
+    <string name="menu_popular_lecture">Popular Lectures</string>
+    <string name="menu_history">History</string>
+    <string name="menu_stats">Stats</string>
+    <string name="menu_lectures">Lectures</string>
+    <string name="menu_downloads">Downloads</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_playlist">Playlists</string>
+    <string name="download">Download</string>
+    <string name="remove_download">Remove downloaded</string>
+    <string name="add_favorites">Add to favorites</string>
+    <string name="remove_favorites">Remove from favorites</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_about">About</string>
+    <string name="menu_share">Share</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="track_selection_title">Select tracks</string>
+
+    <string name="unexpected_intent_action">Unexpected intent action: <xliff:g id="action">%1$s</xliff:g></string>
+
+    <string name="error_cleartext_not_permitted">Cleartext traffic not permitted</string>
+
+    <string name="error_generic">Playback failed</string>
+
+    <string name="error_unrecognized_abr_algorithm">Unrecognized ABR algorithm</string>
+
+    <string name="error_unrecognized_stereo_mode">Unrecognized stereo mode</string>
+
+    <string name="error_drm_unsupported_before_api_18">Protected content not supported on API levels below 18</string>
+
+    <string name="error_drm_unsupported_scheme">This device does not support the required DRM scheme</string>
+
+    <string name="error_drm_unknown">An unknown DRM error occurred</string>
+
+    <string name="error_no_decoder">This device does not provide a decoder for <xliff:g id="mime_type">%1$s</xliff:g></string>
+
+    <string name="error_no_secure_decoder">This device does not provide a secure decoder for <xliff:g id="mime_type">%1$s</xliff:g></string>
+
+    <string name="error_querying_decoders">Unable to query device decoders</string>
+
+    <string name="error_instantiating_decoder">Unable to instantiate decoder <xliff:g id="decoder_name">%1$s</xliff:g></string>
+
+    <string name="error_unsupported_video">Media includes video tracks, but none are playable by this device</string>
+
+    <string name="error_unsupported_audio">Media includes audio tracks, but none are playable by this device</string>
+
+    <string name="storage_permission_denied">Permission to access storage was denied</string>
+
+    <string name="sample_list_load_error">One or more sample lists failed to load</string>
+
+    <string name="ima_not_loaded">Playing sample without ads, as the IMA extension was not loaded</string>
+
+    <string name="unsupported_ads_in_concatenation">Playing sample without ads, as ads are not supported in concatenations</string>
+
+    <string name="download_start_error">Failed to start download</string>
+
+    <string name="download_playlist_unsupported">This demo app does not support downloading playlists</string>
+
+    <string name="download_drm_unsupported">This demo app does not support downloading protected content</string>
+
+    <string name="download_scheme_unsupported">This demo app only supports downloading http streams</string>
+
+    <string name="download_live_unsupported">This demo app does not support downloading live content</string>
+
+    <string name="download_ads_unsupported">IMA does not support offline ads</string>
+
+    <string name="prefer_extension_decoders">Prefer extension decoders</string>
+
+    <string name="random_abr">Enable random ABR</string>
+
+    <string name="tunneling">Request multimedia tunneling</string>
+
+    <string name="title_activity_about">AboutActivity</string>
+
+    <string name="donate_text">Donate</string>
+
+    <string name="signout_text">Sign Out</string>
+
+    <string name="rate_us_text">Rate Us</string>
+
+    <string name="no_downloads">No downloads</string>
+
+    <string name="no_favorites">No favorites</string>
+
+    <string name="started_download">Started download</string>
+
+    <string name="downloading">Downloading</string>
+
+    <string name="downloaded_already">Already downloaded</string>
+
+    <string name="error_playing">No internet connection, could not play</string>
+
+    <!-- About screen strings -->
+    <string name="swami_prabhupada">His Holiness Bhakti Vikasa Swami is a disciple of His Divine Grace A.C. Bhaktivedanta Swami Prabhupada (Founder-acarya of International Society for Krishna Consciousness).</string>
+    <string name="maharaj_name">Bhakti Vikāsa Swami</string>
+    <string name="about_text">
+        "His Holiness Bhakti Vikāsa Swami appeared in this world in 1957 in England. He joined the International Society for Krishna Consciousness (ISKCON) in London in 1975 and was initiated in that year with the name Ilāpati dāsa by ISKCON’s founder-ācārya, His Divine Grace A.C. Bhaktivedānta Swami Prabhupāda.From 1977 to 1979 His Holiness was based in India, mostly traveling in West Bengal preaching Kṛṣṇa consciousness and distributing Śrīla Prabhupāda’s books. He then spent the following ten years helping to pioneer ISKCON’s preaching in Bangladesh, Burma, Thailand, and Malaysia.\n\nIn 1989 he was granted the order of sannyāsa, receiving the name Bhakti Vikāsa Swami, and again made his base in India.He has since travelled widely throughout the subcontinent, lecturing in English, Hindi, and Bengali. His Holiness also travels to and preaches Kṛṣṇa consciousness in other parts of the world.\n\nHe continues to write books and magazine articles. His books have been translated into more than fifteen languages.\n\n"
+    </string>
+    <string name="title_sign_in">Welcome</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="hint_password">password</string>
+    <string name="hint_email">email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Don’t have an account yet? <u>Create one</u></string>
+    <string name="google_signin">Google Sign In</string>
+    <string name="facebook_signin">Facebook Sign In</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="playback_speed_pref_key">PLAY_SPEED_PREF</string>
+    <string name="playback_speed_pref_key_video">PLAY_SPEED_PREF_VIDEO</string>
+    <string name="heading_donation_form">Donations are welcome for the upkeep of this site and for all other programs that His Holiness Bhakti Vikasa Swami is involved in.</string>
+    <string name="title_donation_form">Donation Form</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_donation_email">Email</string>
+    <string name="hint_donation_phone_number">Phone Number</string>
+    <string name="hint_donation_choose_your_option">Choose your option*</string>
+    <string name="hint_donation_amount">Amount*</string>
+    <string name="title_donation_donate_for">Donate For</string>
+    <string name="btn_label_continue">Continue</string>
+    <string name="title_donation_currency">Currency</string>
+    <string name="settings_text">Settings</string>
+    <string name="set_default_settings">Set to Default</string>
+    <string name="lang_hindi">Hindi</string>
+    <string name="lang_punjabi">Punjabi</string>
+    <string name="lang_english">English</string>
+    <string name="lang_bengali">Bengali</string>
+    <string name="label_notification_settings">Choose the language(s) you wish to get notification for:</string>
+    <string name="default_notification_channel_id">lectures</string>
+    <string name="default_notification_channel_name">Lectures</string>
+    <string name="total_lecture">Total audio files:</string>
+
+    <string-array name="play_speed_array">
+        <item>0.50x</item>
+        <item>0.75x</item>
+        <item>1.0x</item>
+        <item>1.15x</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>1.75x</item>
+        <item>2.0x</item>
+    </string-array>
+    <string name="permission_message_storage">Bhakti Vikāsa Swami required storage permission to perform this action</string>
+    <string name="permission_denied">Permission Denied</string>
+</resources>

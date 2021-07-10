@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/one_dot_five"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    android:background="#323232"
+    android:gravity="center"
+    android:padding="@dimen/default_4dp"
+    android:textAlignment="gravity"
+    android:textColor="@color/white"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large" />

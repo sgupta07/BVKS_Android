@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp">
+
+    <ImageView
+        android:id="@+id/rearrange_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_dehaze_black_24dp"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="72dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/rearrange_view"
+        android:scaleType="centerInside" />
+
+   <!-- <ImageView
+        android:id="@+id/image_view_download_progress"
+        android:layout_width="72dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/rearrange_view"
+        android:background="#80000000"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_file_download_black_24dp"
+        android:visibility="invisible"
+        tools:visibility="visible" />-->
+    <ProgressBar
+        android:id="@+id/image_view_download_progress"
+        android:layout_width="72dp"
+        android:progressTint="@color/colorAccent"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/rearrange_view"
+        android:background="#80000000"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_view_downloaded"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignTop="@id/thumbnail"
+        android:layout_alignEnd="@+id/thumbnail"
+        android:src="@drawable/ic_download_done_icon"
+        android:visibility="invisible"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FFFFFF"
+        tools:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/peak_meter_1"
+        android:layout_width="8dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:background="@drawable/peak_meter_1"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/peak_meter_2"
+        android:layout_width="8dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="4dp"
+        android:layout_toEndOf="@+id/peak_meter_1"
+        android:background="@drawable/peak_meter_2"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/peak_meter_3"
+        android:layout_width="8dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="28dp"
+        android:layout_toEndOf="@+id/peak_meter_2"
+        android:background="@drawable/peak_meter_3"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <!--region title-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/playbackBarLayout"
+        android:layout_toEndOf="@id/peak_meter_3"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif"
+        android:singleLine="true"
+        android:textSize="16sp"
+        tools:text="Can Drug be Spiritual?" />
+    <!--endregion-->
+
+    <!--region Verse View-->
+    <TextView
+        android:id="@+id/verse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_alignStart="@id/title"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingEnd="8dp"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="Vishnu-sahasranama 720" />
+    <!--endregion-->
+
+    <!--region Length-->
+    <TextView
+        android:id="@+id/length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/verse"
+        android:layout_toStartOf="@+id/image_view_markedFavorite"
+        android:layout_toEndOf="@id/verse"
+        android:drawableStart="@drawable/gray_bullet"
+        android:drawablePadding="2dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-light"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="30.49" />
+    <!--endregion-->
+
+
+    <!--region Country and state view-->
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verse"
+        android:layout_alignStart="@id/verse"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:maxLength="25"
+        android:paddingEnd="8dp"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="Meenangadi,Kerala" />
+    <!--endregion-->
+
+    <!--region Date View-->
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/place"
+        android:layout_toEndOf="@+id/place"
+        android:drawableStart="@drawable/gray_bullet"
+        android:drawablePadding="8dip"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-light"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="2020/11/06" />
+    <!--endregion-->
+
+    <!--region Favorite View-->
+    <ImageView
+        android:id="@+id/image_view_markedFavorite"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_above="@+id/date"
+        android:layout_gravity="center_vertical"
+        android:layout_toStartOf="@+id/playbackBarLayout"
+        android:background="@drawable/ic_star_golden_24dp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+    <!--endregion-->
+    <RelativeLayout
+        android:clickable="false"
+        android:id="@+id/playbackBarLayout"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_toStartOf="@+id/settings_popup">
+
+        <ImageView
+            android:clickable="false"
+            android:id="@+id/iv_lecture_complete"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_lecture_completed" />
+
+        <ProgressBar
+            android:clickable="false"
+            android:id="@+id/circularPlaybackBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="#10ffffff"
+            android:foregroundGravity="right"
+            android:indeterminate="false"
+            android:max="100"
+            android:paddingStart="-18dp"
+            android:paddingEnd="-18dp"
+            android:progress="50"
+            android:progressDrawable="@drawable/circular_playback"
+            android:secondaryProgress="100" />
+
+        <TextView
+            android:clickable="false"
+            android:id="@+id/textViewPlaybackPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="50%"
+            android:textColor="@color/progress_bar_text_color"
+            android:textSize="12sp" />
+    </RelativeLayout>
+    <!--region 3 Dot Option View-->
+    <ImageButton
+        android:id="@+id/settings_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/default_5dp"
+        android:padding="15dp"
+        android:background="@drawable/ic_settings_lecture_item"
+        android:backgroundTint="#000000" />
+    <!--endregion-->
+
+
+</RelativeLayout>
+

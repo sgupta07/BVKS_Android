@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_lectures">
+
+    <fragment
+        android:id="@+id/nav_lectures"
+        android:name="com.iskcon.bvks.ui.lectures.LectureFragment"
+        android:label="@string/menu_lecture_library"
+        tools:layout="@layout/fragment_lecture" />
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.iskcon.bvks.ui.history.HistoryListFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" >
+        <action android:id="@+id/action_b_to_a_history"
+            app:destination="@id/nav_lectures"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/nav_lectures"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_stats"
+        android:name="com.iskcon.bvks.ui.stats.StatsFragmentV2"
+        android:label="@string/menu_stats"
+        tools:layout="@layout/fragment_stats" />
+    <fragment
+        android:id="@+id/nav_popular_lecture"
+        android:name="com.iskcon.bvks.ui.popularlecture.PopularLectureListFragment"
+        android:label="@string/menu_popular_lecture"
+        tools:layout="@layout/fragment_popular_lecture" >
+        <action android:id="@+id/action_b_to_a"
+            app:destination="@id/nav_lectures"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/nav_lectures"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.iskcon.bvks.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.iskcon.bvks.ui.share.ShareFragment"
+        android:label="@string/menu_share" />
+
+    <fragment
+        android:id="@+id/nav_donate"
+        android:name="com.iskcon.bvks.ui.donate.DonateFragment"
+        android:label="@string/donate_text"
+        tools:layout="@layout/fragment_donate"/>
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.iskcon.bvks.ui.settings.SettingsFragment"
+        android:label="@string/settings_text" />
+
+    <fragment
+        android:id="@+id/nav_signout"
+        android:name="com.iskcon.bvks.ui.signout.SignOutFragment"
+        android:label="@string/signout_text" />
+    <fragment
+        android:id="@+id/nav_rate_us"
+        android:name="com.iskcon.bvks.ui.rateus.RateUsFragment"
+        android:label="@string/rate_us_text" />
+</navigation>

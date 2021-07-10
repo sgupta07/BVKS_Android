@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="72dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerInside" />
+
+
+    <!--region title-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/thumbnail"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif"
+        android:singleLine="true"
+        android:textSize="16sp"
+        tools:text="Can Drug be Spiritual?" />
+    <!--endregion-->
+
+    <!--region Verse View-->
+    <TextView
+        android:id="@+id/verse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_alignStart="@id/title"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingEnd="8dp"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="Vishnu-sahasranama 720" />
+    <!--endregion-->
+    <!--region Date View-->
+    <TextView
+        android:layout_alignBaseline="@id/verse"
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/verse"
+        android:drawablePadding="8dip"
+        android:ellipsize="end"
+        android:drawableStart="@drawable/gray_bullet"
+        android:fontFamily="sans-serif-condensed-light"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="2020/11/06" />
+    <!--endregion-->
+
+    <!--region Lecture Count View-->
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verse"
+        android:layout_alignStart="@id/verse"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingEnd="8dp"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="Lecture:1" />
+    <!--endregion-->
+    <!--region Email View-->
+    <TextView
+        android:layout_alignBaseline="@id/count"
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/count"
+        android:drawablePadding="8dip"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-light"
+        android:singleLine="true"
+        android:textSize="12sp"
+        tools:text="example@yopmail.com" />
+    <!--endregion-->
+    <!--region 3 Dot Option View-->
+    <ImageButton
+        android:id="@+id/settings_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/default_5dp"
+        android:background="@drawable/ic_settings_lecture_item"
+        android:backgroundTint="#000000" />
+    <!--endregion-->
+
+</RelativeLayout>
+

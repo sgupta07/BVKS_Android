@@ -1,0 +1,80 @@
+{
+  "project_info": {
+    "project_number": "184985407900",
+    "firebase_url": "https://bvks-ee662.firebaseio.com",
+    "project_id": "bvks-ee662",
+    "storage_bucket": "bvks-ee662.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184985407900:android:b5d33dfffbfc18ac27b859",
+        "android_client_info": {
+          "package_name": "com.iskcon.bvks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184985407900-6ie8vgtdf0hkt535vokcmbrv7a828t88.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iskcon.bvks",
+            "certificate_hash": "022d3ad873b798da87a3504c38205dda4a00bad8"
+          }
+        },
+        {
+          "client_id": "184985407900-a2g3apieplhhjnvd1qkc40a33nkfii1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iskcon.bvks",
+            "certificate_hash": "2d182b1cd31e3d22e44d6d4d145edd9f749e5fa2"
+          }
+        },
+        {
+          "client_id": "184985407900-is9176c6uegf3fu8mhlcaeoht1ib3he8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iskcon.bvks",
+            "certificate_hash": "7aa41161e93c415ba51d91f39a5b93fe4bd87ca3"
+          }
+        },
+        {
+          "client_id": "184985407900-n99jjr3qs0sss157tsmjq3c5u63d35fp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iskcon.bvks",
+            "certificate_hash": "9433600cf7315bf7ae18a2557e99c3e331a2406f"
+          }
+        },
+        {
+          "client_id": "184985407900-avq07srgouv7j2cog7038r0j36k1r8rs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxdevB0u-UF3erR1Fr5DQk2FIPMMPBmY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184985407900-avq07srgouv7j2cog7038r0j36k1r8rs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "184985407900-1sqibj3d2scqq3u1brei60k9t97ae0o7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bhakti.bvks",
+                "app_store_id": "1536451261"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
