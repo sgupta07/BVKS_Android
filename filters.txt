@@ -1,0 +1,398 @@
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguages(List<String> languages);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchAndLanguages(String search, List<String> languages);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByCountries(List<String> countries);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchAndCountries(String search, List<String> countries);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByPlaces(List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchAndPlaces(String search, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByYears(List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchAndYears(String search, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByMonths(List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchAndMonths(String search, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesAndCountries(List<String> languages, List<String> countries);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesAndCountries(String search, List<String> languages, List<String> countries);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesAndPlaces(List<String> languages, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesAndPlaces(String search, List<String> languages, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesAndYears(List<String> languages, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesAndYears(String search, List<String> languages, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesAndMonths(List<String> languages, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesAndMonths(String search, List<String> languages, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByCountriesAndPlaces(List<String> countries, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchCountriesAndPlaces(String search, List<String> countries, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByCountriesAndYears(List<String> countries, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchCountriesAndYears(String search, List<String> countries, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByCountriesAndMonths(List<String> countries, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchCountriesAndMonths(String search, List<String> countries, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByPlacesAndYears(List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchPlacesAndYears(String search, List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByPlacesAndMonths(List<String> places, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchPlacesAndMonths(String search, List<String> places, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByYearsAndMonths(List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchYearsAndMonths(String search, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesCountriesAndPlaces(List<String> languages, List<String> countries, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesCountriesAndPlaces(String search, List<String> languages, List<String> countries, List<String> places);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesPlacesAndYears(List<String> languages, List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesPlacesAndYears(String search, List<String> languages, List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesYearsAndMonths(List<String> languages, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesYearsAndMonths(String search, List<String> languages, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByCountriesPlacesAndYears(List<String> countries, List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchCountriesPlacesAndYears(String search, List<String> countries, List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByCountriesYearsAndMonths(List<String> countries, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchCountriesYearsAndMonths(String search, List<String> countries, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByPlacesYearsAndMonths(List<String> places, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchPlacesYearsAndMonths(String search, List<String> places, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesCountriesPlacesAndYears(List<String> languages, List<String> countries, List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesCountriesPlacesAndYears(String search, List<String> languages, List<String> countries, List<String> places, List<String> years);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByLanguagesPlacesYearsAndMonths(List<String> languages, List<String> places, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_LANGUAGE + " IN (:languages)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchLanguagesPlacesYearsAndMonths(String search, List<String> languages, List<String> places, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectByCountriesPlacesYearsAndMonths(List<String> countries, List<String> places, List<String> years, List<String> months);
+
+    @Query("SELECT * FROM " + Lecture.TABLE_NAME + " WHERE " + Lecture.COLUMN_NAME + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_PLACE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_CATEGORIES + " LIKE :search"
+            + " OR " + Lecture.COLUMN_LANGUAGE + " LIKE :search"
+            + " OR " + Lecture.COLUMN_VERSE_SHORT + " LIKE :search"
+            + " AND " + Lecture.COLUMN_COUNTRY + " IN (:countries)"
+            + " AND " + Lecture.COLUMN_PLACE + " IN (:places)"
+            + " AND " + Lecture.COLUMN_YEAR + " IN (:years)"
+            + " AND " + Lecture.COLUMN_MONTH + " IN (:months)"
+            + " ORDER BY " + Lecture.COLUMN_DATE + " DESC")
+    Cursor selectBySearchCountriesPlacesYearsAndMonths(String search, List<String> countries, List<String> places, List<String> years, List<String> months);
